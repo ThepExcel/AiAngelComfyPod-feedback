@@ -1,0 +1,61 @@
+name: สูตรที่ได้ผล · A recipe that worked
+description: แชร์ prompt, LoRA หรือค่าที่ใช้แล้วออกมาดี ให้คนอื่นลองตาม · Share settings that gave a good result.
+labels: [recipe]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        สูตรดีๆ อาจถูกนำไปเป็นค่าเริ่มต้นหรือตัวอย่างใน template ต่อไป ✨ · Good recipes may become defaults or examples.
+
+        หน้านี้เป็น public: **ไม่แปะรูปหรือคลิป 18+ ใส่เป็นคำอธิบายแทน** และไม่ใช้หน้าคนจริงที่ไม่ได้ยินยอม
+        This page is public: describe 18+ results in words, never attach them, and no real people without consent.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: ใช้กับอะไร · Used for
+      options:
+        - Clip (AiAngelH3)
+        - Clip (H3 hybrid)
+        - Image (Qwen Image 2.1)
+        - Image edit (Qwen Image 2.1)
+        - Image (Krea 2)
+        - Motion video (SCAIL-2)
+        - Upscale (720p / 1080p)
+        - อื่นๆ · Other
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: loras
+    attributes:
+      label: LoRA และค่าความแรง · LoRAs and strengths
+      placeholder: |
+        Krea2_TextFusion_Refusal_Reduction 1.0
+        ลิงก์ Civitai/HF ของ LoRA ที่ไม่ได้มากับ template · Link any LoRA the template does not ship.
+  - type: textarea
+    id: settings
+    attributes:
+      label: ค่าอื่นๆ · Other settings
+      description: Shape, ความยาว, 720p, Fast, seed, รูปอ้างอิงแบบไหน หรือแปะ recipe JSON จาก Outputs · Or paste the recipe JSON from Outputs.
+      render: text
+  - type: textarea
+    id: why
+    attributes:
+      label: ทำไมถึงเวิร์ก · What made it work
+      description: เทียบกับตอนไม่ใช้ เห็นความต่างยังไง · What changed against not using it.
+  - type: textarea
+    id: result
+    attributes:
+      label: ผลลัพธ์ · Result
+      description: รูปหรือคลิปที่ไม่ใช่ 18+ หรือลิงก์ · A safe-for-work picture, clip or link.
+  - type: input
+    id: version
+    attributes:
+      label: เวอร์ชัน template · Template version
+      placeholder: v1.20

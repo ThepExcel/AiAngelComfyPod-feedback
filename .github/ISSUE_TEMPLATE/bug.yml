@@ -1,0 +1,68 @@
+name: แจ้งปัญหา · Bug report
+description: มีอะไรพัง ค้าง หรือไม่ทำงานตามที่ควร · Something broke, hung or did not work.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ขอบคุณที่ช่วยแจ้งนะคะ 🙏 · Thanks for reporting.
+
+        ⚠️ **ห้ามใส่ลิงก์ Dashboard** (`…-8189.proxy.runpod.net`) หรือ key/token ใดๆ ที่นี่ ใครมีลิงก์ก็คุม pod ของคุณได้
+        **Never paste your Dashboard link or any key here**: anyone with the link controls your pod.
+  - type: input
+    id: version
+    attributes:
+      label: เวอร์ชัน template · Template version
+      description: มุมบนซ้ายของ Dashboard เช่น v1.20 (ปุ่ม "ส่ง feedback" ใน Dashboard เติมให้เอง) · Top bar of the Dashboard.
+      placeholder: v1.20
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU
+      placeholder: RTX PRO 6000 Blackwell
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: เกิดตรงไหน · Where
+      options:
+        - ตอน boot / ดาวน์โหลดโมเดล · Boot or model downloads
+        - Create → Clip (H3)
+        - Create → Image
+        - Motion video (SCAIL-2)
+        - Outputs (ZIP, 720p, 1080p, upscale)
+        - Models / Keys / Logs
+        - ComfyUI เอง · ComfyUI itself
+        - อื่นๆ · Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: เกิดอะไรขึ้น และควรเป็นยังไง · What happened, and what you expected
+      placeholder: กด Start แล้วขึ้น "…" · I pressed Start and got "…"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: ทำตามนี้แล้วเจอ · Steps to see it again
+      description: ถ้ามีปุ่ม "Use this recipe" ให้แปะค่าที่ใช้ (prompt, ขนาด, LoRA) · The settings you used, if any.
+      placeholder: |
+        1. MODELS=h3core,aiangelh3,h3upscaler,qwen21
+        2. Create → Clip, 9:16, 10 s, 720p
+        3. …
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      description: Dashboard → Logs → Boot / Models / ComfyUI คัดเฉพาะส่วนที่มี error · Copy the part with the error.
+      render: text
+  - type: textarea
+    id: shots
+    attributes:
+      label: ภาพหน้าจอ · Screenshots
+      description: ลากรูปมาวางได้ ขอเป็นภาพที่ไม่ใช่ 18+ · Drag images here; nothing 18+ please.

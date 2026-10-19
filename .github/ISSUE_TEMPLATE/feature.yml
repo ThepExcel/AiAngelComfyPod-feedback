@@ -1,0 +1,26 @@
+name: ขอฟีเจอร์ · Feature request
+description: อยากให้ template ทำอะไรได้เพิ่ม หรือทำให้ง่ายขึ้น · Something you wish it did, or did more easily.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: อยากทำอะไรให้ได้ · What you want to get done
+      description: เล่าเป้าหมายก่อน ยังไม่ต้องบอกวิธี · The goal first, not the solution.
+      placeholder: อยากทำคลิปยาว 30 วินาทีที่ตัวละครเดิมพูดต่อเนื่อง · I want a 30 s clip where one character keeps talking.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: ตอนนี้ทำแบบไหนอยู่ ติดตรงไหน · How you do it today, and where it gets stuck
+  - type: textarea
+    id: idea
+    attributes:
+      label: ไอเดียที่คิดไว้ (ถ้ามี) · Your idea, if you have one
+      description: ปุ่ม, โมเดล, LoRA, workflow หรือลิงก์ตัวอย่าง · A button, a model, a LoRA, a workflow or a link.
+  - type: input
+    id: version
+    attributes:
+      label: เวอร์ชัน template · Template version
+      placeholder: v1.20
